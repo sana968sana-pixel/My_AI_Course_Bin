@@ -8,7 +8,6 @@ print(type(height))
 compvar=3+4j
 print(compvar,type(compvar))
 
-
 # Create a boolean variable is_python_fun and set it to True.
 is_python_fun=True
 
