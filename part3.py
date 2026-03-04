@@ -9,6 +9,7 @@ a=2
 b=3
 print("power ",a**b)
 
+
 # Demonstrate the difference between / (division) and // (floor division) with the numbers 10 and 3.
 a=10
 b=3
