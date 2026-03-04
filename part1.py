@@ -29,7 +29,7 @@ print("your full name is ",firstname+lastname)
 
 # Create a greeting that takes a user's name and prints "Welcome, [Name]!" in all uppercase.
 name=input("user name is ")
-print(("Welcome,",name,"!").upper())
+print("Welcome,",name .upper())
 
 # Ask for a user's city and country, then print them in the format: "City, Country".
 city=input("your city ")
