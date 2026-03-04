@@ -39,7 +39,7 @@ print(num>0 and num%2!=0)
 
 # Compare the lengths of two strings provided by the user
 str1=input("Enter first string:")
-str=input('Enter thr 2nd string')
+str=input('Enter the 2nd string')
 print(len(str1)<len(str))
 print(len(str1)>len(str))
 print(len(str1)==len(str))
