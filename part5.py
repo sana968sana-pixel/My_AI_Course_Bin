@@ -18,6 +18,7 @@ total=400
 total/=4
 print(total)
 
+
 # Use **= to square a variable.
 square=2
 square**=square
