@@ -17,7 +17,7 @@ text=input("Enter a string:")
 print(text=="python")
 
 #  Use the or operator to check if a user is either "Admin" or "Superuser"
-name=input( "enter your ")
+name=input( "enter your role ")
 print(name=="superuser" or name=="admin" )
 
 # Demonstrate the not operator by reversing a Boolean variable
