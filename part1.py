@@ -7,7 +7,7 @@ color=input("what is your favorite color: ")
 print("Your favourite color is",color)
 
 # Use a single print() statement to display three different words separated by a hyphen (-).
-print("Hello_hi_hey")
+print("Hello-hi-hey")
 
 # Prompt the user for their birth year and print their age (assume the current year is 2026).
 birthYear=int(input("what is your birth year:"))
