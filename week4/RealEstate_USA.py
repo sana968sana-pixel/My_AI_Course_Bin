@@ -1,4 +1,5 @@
 import numpy as np
+np.set_printoptions(threshold=np.inf, linewidth=np.inf)
 brokered_by,price,zip_code=np.genfromtxt('week4\RealEstate-USA.csv',delimiter=',',usecols=(0,2,9), unpack=True, dtype=None,skip_header=1)
 print(brokered_by)
 print(price)
