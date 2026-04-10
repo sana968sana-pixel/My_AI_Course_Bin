@@ -1,4 +1,4 @@
-address,city,country,keys,latitude,longitude,name,postalCode,province,websites
+address,city,country,keys,latitude,longitude,name,postalCode,province,websites 
 324 Main St,Massena,US,us/ny/massena/324mainst/-1161002137,44.9213,-74.89021,McDonald's,13662,NY,"http://mcdonalds.com,http://www.mcdonalds.com/?cid=RF:YXT_FM:TP::Yext:Referral"
 530 Clinton Ave,Washington Court House,US,us/oh/washingtoncourthouse/530clintonave/-791445730,39.53255,-83.44526,Wendy's,43160,OH,http://www.wendys.com
 408 Market Square Dr,Maysville,US,us/ky/maysville/408marketsquaredr/1051460804,38.62736,-83.79141,Frisch's Big Boy,41056,KY,"http://www.frischs.com,https://www.frischs.com/location/maysville-ky/"

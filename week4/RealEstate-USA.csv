@@ -3,7 +3,7 @@ brokered_by,status,price,bed,bath,acre_lot,street,city,state,zip_code,house_size
 52707,for_sale,80000,4,2,0.08,1902874,Adjuntas,Puerto Rico,601,1527,
 103379,for_sale,67000,2,1,0.15,1404990,Juana Diaz,Puerto Rico,795,748,
 31239,for_sale,145000,4,2,0.1,1947675,Ponce,Puerto Rico,731,1800,
-34632,for_sale,65000,6,2,0.05,331151,Mayaguez,Puerto Rico,680,,
+34632,for_sale,65000,6,2,0.05,331151,Mayaguez,Puerto Rico,680,, 
 103378,for_sale,179000,4,3,0.46,1850806,San Sebastian,Puerto Rico,612,2520,
 1205,for_sale,50000,3,1,0.2,1298094,Ciales,Puerto Rico,639,2040,
 50739,for_sale,71600,3,2,0.08,1048466,Ponce,Puerto Rico,731,1050,
