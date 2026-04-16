@@ -135,7 +135,6 @@ ar=[0,3,5,7]
 array=pd.array(ar)
 print(array)
 
-#-------------arr
-# ays of integers--------
+#-------------arrays of integers--------
 int_array=pd.array([1,2,3,6],dtype='int')
 print(int_array)
