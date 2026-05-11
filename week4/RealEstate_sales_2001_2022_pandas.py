@@ -1,26 +1,31 @@
 import pandas as pd
-df = pd.read_csv('week4/RealEstate-USA.csv',delimiter=',')
+print(pd.__version__)
+
+df=pd.read_csv('week4/Real_Estate_Sales_2001-2022_GL-Short.csv',delimiter=',',parse_dates=[2],date_format={'date_added':'%d-%m-%y'})
+
 print(df)
-print(" data types" , df.dtypes)
-print("info():   " , df.info() )
 
-print("last 2 rows:")
-print(df.tail(2))
+print('First 3 rows',df.head(3))
 
-print("first 2 rows:")
-print(df.head(2))
+print('Last 2 rows',df.tail(2))
 
-print("summmary of statistics  dataframe:",df.describe())
+print("datatypes",df.dtypes)
 
-print("counting the rows and columns :",df.shape)
+print('df.info',df.info())
+
+# summary of all statistics functions
+print('describes shows all the  statistics functions\n',df.describe()) 
+ 
+
+print('counting the rows and column in dataframe',df.shape)#no of rows and column
 
 #access single col
-city=df["city"]
-print("acess the name column",city)
+Sales_Ratio=df["Sales Ratio"]
+print("acess the name column",Sales_Ratio)
 
 #multiple col
-city_state=df[["city","state"]]
-print("acess multiple colums:",city_state)
+multicol=df[["Property Type","Residential Type"]]
+print("acess multiple colums:",multicol)
 
 #------------------------use .loc-------------------------
 # single row using loc
@@ -36,23 +41,24 @@ slice_rows=df.loc[3:7]
 print("slice of rows:",slice_rows)
 
 #conditional selection of rows
-select_rows=df.loc[df["city"]=="Ponce"]
-print("selecting a sindle colum city  those value ponce:",select_rows)
+select_rows=df.loc[df["Residential Type"]=="Two Family"]
+print("selecting a single colum Residential Type  those value ponce:",select_rows)
+
 
 #select single col
-select_rows2=df.loc[:2,'street']
+select_rows2=df.loc[:2,'Town']
 print(select_rows2)
 
 #select multiple colums
-select_rows3=df.loc[:3,["price","zip_code"]]
+select_rows3=df.loc[:3,["Town","Residential Type"]]
 print("select a slice of col:",select_rows3)
 
 #select slice of column
-select_rows4=df.loc[:2,"status":"zip_code"]
+select_rows4=df.loc[:2,"Assessed Value":"Sales Ratio"]
 print("select a slice of column",select_rows4)
 
 #select combine row and col
-select_rows5=df.loc[df["city"]=='Lares',"status":"house_size"]
+select_rows5=df.loc[df["Town"]=='Avon',"Date Recorded":"Sales Ratio"]
 print("combined rows and col:",select_rows5)
 
 #-----------------------using .iloc---------------------
@@ -61,7 +67,7 @@ print("select rows using iloc",select_row_iloc)
 
 
 #select slice
-select_row_iloc2=df.iloc[2:7]
+select_row_iloc2=df.iloc[2:5]
 print("select slice of row",select_row_iloc2)
 
 
@@ -78,7 +84,18 @@ print("select row and column",select_row_iloc4)
 
 #----------MANIPULATION--------
 
-df.loc[len(df.index)]=[111111,"not for sale",50000,2,3,0.11,111345,"lahore","pakistan",345,122,""]
+df.loc[len(df.index)]= {
+    'Serial Number': 20364,
+    'List Year': 2020,
+    'Date Recorded': '06/17/2021',
+    'Town': 'Bethel',
+    'Address': '1308 LEXINGTON BOULEVARD',
+    'Assessed Value': 195300.00,
+    'Sale Amount': 365000.00,
+    'Sales Ratio': 0.535,
+    'Property Type': 'Residential',
+    'Residential Type': 'Condo'
+}
 print("modified data frame:")
 print(df)
 
@@ -90,15 +107,16 @@ print("modified data ")
 print(df)
 
 
-#------------drop colm-----------
+#------------drop col-----------
 
-df.drop("acre_lot",axis=1, inplace=True)
-df.drop(["house_size","prev_sold_date"], axis=1,inplace=True)
+df.drop("Non Use Code",axis=1, inplace=True)
+df.drop(["Assessor Remarks","OPM remarks"], axis=1,inplace=True)
 print("modified data frame")
 print(df)
+
 #--------------rename------------
-df.rename(columns= {"status":"status_changed"}, inplace=True)
-df.rename(mapper= {'bed': 'bednumber_Changed', 'state':'state_changed'}, axis=1, inplace=True)
+df.rename(columns= {"Location":"Location_changed"}, inplace=True)
+df.rename(mapper= {'Address': 'Address_Changed', 'Location':'Location_changed'}, axis=1, inplace=True)
 
 print("Modified DataFrame  - Rename Labels :")
 print(df)
@@ -107,16 +125,18 @@ df.rename(index={0: 7}, inplace=True)
 df.rename(mapper={1: 10, 2: 140}, axis=0, inplace=True)
 print("Modified DataFrame :")
 print(df)
+
 #-----------select rows----------
-selected_rows=df.query("street =='Adjuntas' or zip_code==601")
+selected_rows=df.query("Town =='Middletown' or 'Property Type'=='Residential' ")
 print(select_rows. to_string())
 print(len(select_rows))
 
 #------------sort rows----------
-sorted_df= df.sort_values(by='price')
+df['Date Recorded'] = pd.to_datetime(df['Date Recorded'])
+sorted_df= df.sort_values(by='Date Recorded')
 print(sorted_df.to_string(index=False))
 
-sorted_df1=df.sort_values(by=['price','city'])
+sorted_df1=df.sort_values(by=['Town','Property Type'])
 print("sorted by price and city in ascending order")
 print(sorted_df1.to_string(index=False))
 
@@ -125,7 +145,7 @@ print(sorted_df1.to_string(index=False))
 df_cleaned=df.dropna()
 print("cleaned data",df_cleaned)
 
-df.fillna(0,inplace=True)
+df.fillna('0',inplace=True)
 print("filling  values with 0",df)
 
 
@@ -138,3 +158,4 @@ print(array)
 #-------------arrays of integers--------
 int_array=pd.array([1,2,3,6],dtype='int')
 print(int_array)
+
